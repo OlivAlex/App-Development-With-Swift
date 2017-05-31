@@ -44,10 +44,15 @@ class ViewController: UIViewController {
     }
     
     @IBAction func textChanged(_ sender: UITextField) {
-        
         if let text = sender.text {
             print(text)
         }
     }
+    
+    @IBAction func respondToTapGesture(_ sender: UITapGestureRecognizer) {
+        let location = sender.location(in: view)
+        print(location)
+    }
+    
 }
 
