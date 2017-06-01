@@ -63,8 +63,6 @@ class ViewController: UIViewController {
         for letter in currentGame.formattedWord.characters {
             letters.append(String(letter))
         }
-        let wordWithSpacing = letters.joined(separator: " ")
-
         correctWordLabel.text = currentGame.formattedWord
         scoreLabel.text = "Wins: \(totalWins), Losses: \(totalLosses)"
         treeImageView.image = UIImage(named: "Image-\(currentGame.incorrectMovesRemaining)")
