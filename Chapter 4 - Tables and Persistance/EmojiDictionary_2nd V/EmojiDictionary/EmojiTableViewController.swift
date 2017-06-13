@@ -16,11 +16,10 @@ class EmojiTableViewController: UITableViewController {
         
         super.viewDidLoad()
         
-        guard Emoji.loadFromFile() != nil else {
+        guard let savedEmojis = Emoji.loadFromFile() else {
             return emojis = Emoji.loadSampleEmojis()
         }
-        
-        emojis = Emoji.loadFromFile()!
+        emojis = savedEmojis
         
         navigationItem.leftBarButtonItem = editButtonItem
         tableView.rowHeight = UITableViewAutomaticDimension
