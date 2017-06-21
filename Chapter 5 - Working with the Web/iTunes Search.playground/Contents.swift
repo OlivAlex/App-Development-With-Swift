@@ -39,6 +39,7 @@ func fetchItems(matching query: [String: String], completion: @escaping([StoreIt
             let resultsArray = json["results"] as? [[String: Any]] {
             
             let storeItems = resultsArray.flatMap { StoreItem(json: $0)}
+                print(json)
                 completion(storeItems)
         } else {
             print("No data serialized or returned")
